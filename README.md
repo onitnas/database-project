@@ -438,17 +438,23 @@ Operazione 5 - Elenco feedback di film/serie tv/stagioni/episodi
 **Vincolo 1** – voto feedback tra 1 e 5
 
 ALTER TABLE FeedbackFilm ADD CONSTRAINT constr_voto_fed_fil CHECK(voto BETWEEN 1 AND 5);
+
 ALTER TABLE FeedbackSerieTv ADD CONSTRAINT constr_voto_fed_stv CHECK(voto BETWEEN 1 AND 5);
+
 ALTER TABLE FeedbackStagione ADD CONSTRAINT constr_voto_fed_stg CHECK(voto BETWEEN 1 AND 5);
+
 ALTER TABLE FeedbackEpisodio ADD CONSTRAINT constr_voto_fed_epi CHECK(voto BETWEEN 1 AND 5)
 
 **Vincolo 2** – idSerieTv e idStagione chiavi esterne di Episodio
 
 CONSTRAINT 'fk_Episodio_1' FOREIGN KEY ('idSerieTv') REFERENCES 'SerieTv' ('id') ON DELETE NO ACTION ON UPDATE NO ACTION,
+
 CONSTRAINT 'fk_Episodio_2' FOREIGN KEY ('idStagione') REFERENCES 'Stagione' ('id') ON DELETE NO ACTION ON UPDATE NO ACTION
 
 **Vincolo 3** – idUtente, idSerieTv e idStagione chiavi esterne di FeedbackStagione
 
 CONSTRAINT 'fk_FeedbackStagione_1' FOREIGN KEY ('idUtente') REFERENCES 'Utente' ('id') ON DELETE NO ACTION ON UPDATE NO ACTION,
+
 CONSTRAINT 'fk_FeedbackStagione_2' FOREIGN KEY ('idStagione') REFERENCES 'Stagione' ('id') ON DELETE NO ACTION ON UPDATE NO ACTION,
+
 CONSTRAINT 'fk_FeedbackStagione_3' FOREIGN KEY ('idSerieTv') REFERENCES 'SerieTv' ('id') ON DELETE NO ACTION ON UPDATE NO ACTION
