@@ -28,7 +28,7 @@ INDICE
 
 11. [Implementazione operazioni](#implementazione-operazioni)
 
-12. [Vincoli d’integrità](#vincoli-d'integrità)
+12. [Vincoli d’integrità](#vincoli-dintegrità)
 
 ## Descrizione e specifiche
 
