@@ -384,8 +384,10 @@ Stimiamo 50 feedback per film
 
 **TieneTracciaSerieTv**(idUtente, idTv)
 
-**FeedbackFilm**(idUtente, idFilm, voto, commento) **FeedbackSerieTv**(idUtente, IdSerieTv, voto, commento) 
+**FeedbackFilm**(idUtente, idFilm, voto, commento) **FeedbackSerieTv**(idUtente, IdSerieTv, voto, commento)
+
 **FeedbackStagione**(idUtente, idSerieTv, idStagione, voto, commento) 
+
 **FeedbackEpisodio**(idUtente, idSerieTv, idStagione, idEpisodio, voto, commento)
 
 ## Schema fisico
