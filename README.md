@@ -374,19 +374,25 @@ Stimiamo 50 feedback per film
 
 ## Modello logico
 
-**Utente**(id, nomeCognome, nomeUtente, password, email, dataDiNascita) **Film**(id, titolo, genere, descrizione, percorsoPoster, dataDiUscita, societaDiProduzione, cast)
+**Utente**(id, nomeCognome, nomeUtente, password, email, dataDiNascita)
 
-**SerieTv**(id, titolo, genere , descrizione, percorsoPoster, dataDiUscita, societaDiProduzione, network)
+**Film**(id, titolo, genere, descrizione, percorsoPoster, dataDiUscita, societaDiProduzione, cast)
+
+**SerieTv**(id, titolo, genere	, descrizione, percorsoPoster, dataDiUscita, societaDiProduzione, network)
 
 **Stagione**(id, idSerieTv, titolo, descrizione, percorsoPoster, dataDiUscita, numeroStagione)
 
-**Episodio**(id, idSerieTv, idStagione, titolo, descrizione, numeroEpisodio, crew) **TieneTracciaFilm**(idUtente, idFilm)
+**Episodio**(id, idSerieTv, idStagione, titolo, descrizione, numeroEpisodio, crew)
+
+**TieneTracciaFilm**(idUtente, idFilm)
 
 **TieneTracciaSerieTv**(idUtente, idTv)
 
-**FeedbackFilm**(idUtente, idFilm, voto, commento) **FeedbackSerieTv**(idUtente, IdSerieTv, voto, commento)
+**FeedbackFilm**(idUtente, idFilm, voto, commento)
 
-**FeedbackStagione**(idUtente, idSerieTv, idStagione, voto, commento) 
+**FeedbackSerieTv**(idUtente, IdSerieTv, voto, commento)
+
+**FeedbackStagione**(idUtente, idSerieTv, idStagione, voto, commento)
 
 **FeedbackEpisodio**(idUtente, idSerieTv, idStagione, idEpisodio, voto, commento)
 
@@ -411,6 +417,7 @@ Operazione 3 – Feedback su film / serie tv / stagioni / episodi
 - ``INSERT INTO FeedbackSerieTv(‘idUtente’,’idSerieTv’,’voto’,’commento’) VALUES (‘1’,’1’,’5’,’Serie tv fantastica’)``
 
 - ``INSERT INTO FeedbackStagione(‘idUtente’,’idSerieTv’,’idStagione’,’voto’) VALUES (‘1’,’2’,’1’,’3’)``
+- 
 - ``INSERT INTO FeedbackEpisodio(‘idUtente’,’idSerieTv’,’idStagione’,’idEpisodio’,’voto’,’commento’) VALUES (‘1’,‘1’,’1’,’10’,’5’,’Spoiler: WW muore’)``
 
 Operazione 4 – Richiesta informazioni film / serie tv / stagioni / episodi
